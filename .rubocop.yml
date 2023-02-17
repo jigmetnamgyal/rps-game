@@ -21,3 +21,15 @@ RSpec/ContextWording:
     - when
     - with
     - without
+
+Rails/FilePath:
+  Enabled: false
+
+Metrics/MethodLength:
+  AllowedMethods:
+    - execute
+    - prepare_variables
+
+Naming/MethodParameterName:
+  AllowedNames:
+    - e
