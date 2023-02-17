@@ -11,10 +11,14 @@ module Rps
     end
 
     def call
-      # TODO
+      client.call(method, path, arguments)
     end
 
     protected
+
+    def client
+      @client ||= Client.default
+    end
 
     def path
       raise NotImplementedError
