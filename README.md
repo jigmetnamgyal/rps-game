@@ -1,7 +1,7 @@
 # Rock - Paper - Scissor Game
 
 ## To play the game
-- Step One: Clone the repo
+- Step one: Clone the repo
 
 ```
     git clone https://github.com/jigmetnamgyal/rps-game.git
@@ -67,13 +67,13 @@
 
 ## Technologies Used
 
-- GraphQL for API
-- Faraday to make external api request and error handling
+- **GraphQL** for API
+- **Faraday** to make external api request and error handling
 
 ### Development and Testing
-- Pry for debugging
-- rspec-rails for unit testing
-- rubocop-rails and rubocop-rspec for code clean up
+- **Pry** for debugging
+- **rspec-rails** for unit testing
+- **rubocop-rails** and **rubocop-rspec** for code clean up
 
 
 
