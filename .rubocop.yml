@@ -21,3 +21,6 @@ RSpec/ContextWording:
     - when
     - with
     - without
+
+Rails/FilePath:
+  Enabled: false
