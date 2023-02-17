@@ -12,7 +12,9 @@ module Resolvers
       argument :user_choice, Types::GameEnum, null: false
       type ResultAttributes, null: false
 
-      def resolve(user_choice:); end
+      def resolve(user_choice:)
+        Game::Starter.call({ params: { user_choice: user_choice } })
+      end
     end
   end
 end
