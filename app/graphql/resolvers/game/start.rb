@@ -13,7 +13,7 @@ module Resolvers
       type ResultAttributes, null: false
 
       def resolve(user_choice:)
-        Game::Starter.call({ params: { user_choice: user_choice } })
+        { result: Game::Starter.call({ params: { user_choice: user_choice } }) }
       end
     end
   end
