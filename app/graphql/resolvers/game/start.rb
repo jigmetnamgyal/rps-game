@@ -13,7 +13,7 @@ module Resolvers
       type ResultAttributes, null: false
 
       def resolve(user_choice:)
-        # TODO: Game Logic
+
       end
     end
   end
