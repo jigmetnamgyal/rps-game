@@ -5,18 +5,6 @@ module Rps
     # status code
     HTTP_OK = 200
     HTTP_CREATED = 201
-    HTTP_BAD_REQUEST = 400
-    HTTP_UNAUTHORIZED = 401
-    HTTP_FORBIDDEN = 403
-    HTTP_NOT_FOUND = 404
-    HTTP_UNPROCESSABLE_ENTITY = 429
-
-    # exceptions
-    BadRequestError = Class.new(StandardError)
-    ForbiddenError = Class.new(StandardError)
-    NotFoundError = Class.new(StandardError)
-    UnprocessableEntityError = Class.new(StandardError)
-    ApiError = Class.new(StandardError)
 
     def self.default
       @default ||= Rps::Client.new
@@ -36,21 +24,17 @@ module Rps
       ]
     end
 
+    # If the connection is established a response from the server is thrown and if the connection fails it rescue
+    # and randomly generate the throw
     def call(method, path, params)
       response = @client.public_send(method, path, params)
       return response.body if response.status.in? [HTTP_OK, HTTP_CREATED]
-
-      raise error_class(response.status), "Status code : #{response.status}, response: #{response.body}"
+    rescue Faraday::ConnectionFailed
+      generate_random_throw
     end
 
-    def error_class(status)
-      case status
-      when HTTP_BAD_REQUEST then BadRequestError
-      when HTTP_FORBIDDEN then ForbiddenError
-      when HTTP_NOT_FOUND then NotFoundError
-      when HTTP_UNPROCESSABLE_ENTITY then UnprocessableEntityError
-      else ApiError
-      end
+    def generate_random_throw
+      { body: %w[rock paper scissors].sample }.with_indifferent_access
     end
   end
 end
