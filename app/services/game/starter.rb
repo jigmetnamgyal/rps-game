@@ -21,8 +21,7 @@ module Game
     private
 
     def curb_choice
-      # TODO: Integrate API
-      binding.pry
+      Rps::Throw.call['body'].to_sym
     end
 
     def user_choice
