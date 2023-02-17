@@ -1,24 +1,8 @@
-# README
+# Rock - Paper - Scissor Game
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+This is a small rock paper scissor game implemented in Ruby on Rails using **GraphQL API** and **Faraday gem** for 3rd party integration.
 
-* Ruby version
+A user make a choice from _Rock_, _paper_ and _Scissor_ and compete with the _crub bot_ 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
