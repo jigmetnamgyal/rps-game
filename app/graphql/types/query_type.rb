@@ -6,5 +6,7 @@ module Types
     include GraphQL::Types::Relay::HasNodeField
     include GraphQL::Types::Relay::HasNodesField
     include MountQuery
+
+    mount_query Resolvers::Game::Start
   end
 end
