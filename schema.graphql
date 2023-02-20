@@ -1,0 +1,20 @@
+enum GameEnum {
+  paper
+  rock
+  scissor
+}
+
+type Mutation {
+  """
+  An example field added by the generator
+  """
+  testField: String!
+}
+
+type Query {
+  gameStart(userChoice: GameEnum!): ResultAttributes!
+}
+
+type ResultAttributes {
+  result: String!
+}
